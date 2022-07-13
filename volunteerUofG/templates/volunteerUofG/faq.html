@@ -1,0 +1,51 @@
+{% extends "volunteerUofG/base.html" %} {% block content %}
+
+<style>
+    .accordion-body {
+        color: #000000;
+    }
+    
+    .paddingrightleft {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+</style>
+<div class="d-flex justify-content-center align-items-center mt-5 pt-5">
+    <div class="w-100 paddingrightleft">
+        <h2 class="text-center mb-3 accordion-body">"Frequently Asked Questions"</h2>
+        <hr>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <h5>Why volunteering is so important ?</h5>
+      </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Volunteering keeps you in regular contact with others and helps you develop a solid support system, which in turn protects you against stress and depression when you're going through challenging times. Working with pets and other animals
+                        has also been shown to improve mood and reduce stress and anxiety.</div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <h5>How can I become a volunteer?</h5>
+      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">All you have to do is registering with your university email and apply to opportunities provided by charitis.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <h5>How can I find volunteers?</h5>
+      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">All you have to do is, registering with charity documents and creating an opportunity on the website.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock content %}
