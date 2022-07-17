@@ -1,26 +1,42 @@
 {% extends "volunteerUofG/base.html" %} {% block content %}
 <style>
-    .accordion-body {
-        color: #000000;
-    }
-    
     .paddingrightleft {
         padding-right: 10rem;
         padding-left: 10rem;
     }
 </style>
 
-<div class="container mt-3 paddingrightleft accordion-body">
+<!--<div class="container mt-3 paddingrightleft accordion-body" style="color: black ;">
     <div class="col">
         <h2>Login</h2>
         <hr>
 
-        <form method="POST">
-            {% csrf_token %} {% if error %}
-            <div class="alert alert-danger">
-                {{error}}
+        <form id="login_form" method="post" action="/login/">
+            {% csrf_token %}
+            <div class="mb-3">
+                Username: <input type="text" name="username" value="" size="50" />
+                <br />
             </div>
-            {% endif %}
+            <div class="mb-3">
+                Password: <input type="password" name="password" value="" size="50" />
+                <br />
+            </div>
+
+            <input type="submit" value="submit" />
+        </form>
+
+
+    </div>
+</div>-->
+
+
+<div class="container mt-3">
+    <div class="col">
+        <h1 style="text-align: center;">Login</h1>
+        <hr>
+
+        <form id="login_form" method="post" action="/login/">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" name="username">

@@ -1,0 +1,143 @@
+{% extends "volunteerUofG/base.html" %} {% block content %}
+<!--<div class="d-flex justify-content-center px-5 my-4">
+    <div class="d-flex search-container justify-content-center">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
+
+        <button class="btn btn-outline-primary search" type="button">
+              Search
+            </button>
+    </div>
+</div>-->
+
+<div class="container mt-3 paddingrightleft" style="color: black;">
+    <div class="col">
+        <h2>Active Opportunities</h2>
+        <hr>
+    </div>
+
+    <div class="card-group">
+
+        <div class="row">
+            {% for opportunity in opportunities %}
+            <div class="card col-md-4">
+                <img class="card-img-top" src="{{ opportunity.image }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ opportunity.title }}</h5>
+                    <p class="card-text">{{ opportunity.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Interested In : {{ opportunity.title }}</li>
+                    <li class="list-group-item">Skills : {{ opportunity.skills }}</li>
+                    <li class="list-group-item">Location : {{ opportunity.location }}</li>
+                    <li class="list-group-item">Time : {{ opportunity.time }}</li>
+                    <li class="list-group-item">Creator : {{ opportunity.creator }}</li>
+                    <li class="list-group-item">URL : {{ opportunity.url }}</li>
+
+                </ul>
+
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--<div class="card-group">
+        <div class="row">
+            <div class="card col-md-4">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card col-md-4">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card col-md-4">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+
+            <div class="card col-md-4">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card col-md-4">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card" style="width: 25em;">
+                <img class="card-img-top" src="https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+
+{% endblock content %}

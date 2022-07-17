@@ -31,40 +31,55 @@
         padding-left: 40px;
     }
 </style>
-<div class="d-flex justify-content-center px-5 my-4">
-    <div class="d-flex search-container justify-content-center">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
 
-        <button class="btn btn-outline-primary search" type="button">
-              Search
-            </button>
+<div class="d-flex justify-content-center px-5 my-4">
+    <a href="createAnOpportunity/"><button type="button" class="btn btn-warning btn-lg btn-block " style="width: 18rem;">Create a new Opportunity !</button></a>
+    <a href="becomeAVolunteer/"><button type="button" class="btn btn-primary btn-lg btn-block" style="width: 18rem;">Become a VOLUNTEER !</button></a>
+    <a href="findAVolunteer/"><button type="button" class="btn btn-success btn-lg btn-block" style="width: 18rem;">Find a VOLUNTEER !</button></a>
+</div>
+<div class="container">
+    <div class="d-flex justify-content-center px-5 my-4">
+        <div class="card  bg-primary" style="width: 18rem; text-align: center;">
+            <img class="card-img-top" src="https://bmhc.org.uk/wp-content/uploads/2022/01/volunteer1.jpeg" alt="Card image cap" width="400" height="170">
+            <div class="card-body">
+                <a href="activeVolunteers/">
+                    <h5 class="card-title">Active Volunteers</h5>
+                </a>
+                <p class="card-text">{{ activeVolunteersSize }}</p>
+            </div>
+        </div>
+        <div class="card  bg-success" style="width: 18rem; text-align: center;">
+            <img class="card-img-top" src="https://civilservicelocal.blog.gov.uk/wp-content/uploads/sites/94/2020/09/opportunity-1.jpg" alt="Card image cap" width="400" height="170">
+            <div class="card-body">
+                <a href="activeOpportunities/">
+                    <h5 class="card-title">Active Opportunities</h5>
+                </a>
+                <p class="card-text">{{ activeOpportunitiesSize}} </p>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="container">
     <div class="image">
-        <img src="https://northshorechildguidance.org/wp-content/uploads/2019/01/AdobeStock_45082060.jpeg">
+        <img src="https://northshorechildguidance.org/wp-content/uploads/2019/01/AdobeStock_45082060.jpeg" width="500" height="350">
     </div>
     <div class="text">
-        <h5>Volunteering has long been a best way of gaining experience and domain knowledge related to students’ career opportunities, in the case of ending up with unemployment in paid work. With the aid of volunteering choices, undergraduates and postgraduates
-            can be allowed to network and meet new people in various organisations. In the end of this highly beneficial period, students can increase self-confidence, develop new skills, leadership, project management and most importantly team working.
-            Employers take good quality volunteering experience into consideration just as professional paid employments. <br> <br>On the other hand, charities and organisations are in need of volunteers coming from all kind of backgrounds with various
-            talents and abilities. In this regard, University of Glasgow is a perfect resource with it’s nearly 35.000 students from over 140 countries worlwide. Arts, Life-Sociel sciences and engineering scholars may contribute to the society of Glasgow
-            with their well-known reputation of academic success in the UK.
+        <h5 style="text-align: justify;">Volunteering has long been a best way of gaining experience and domain knowledge related to students’ career opportunities, in the case of ending up with unemployment in paid work.
         </h5>
     </div>
 </div>
 
 <div class="container">
+
     <div class="image">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/45/1c/9d/university-of-glasgow.jpg?w=1200&h=-1&s=1">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/45/1c/9d/university-of-glasgow.jpg?w=1200&h=-1&s=1" width="500" height="350">
     </div>
     <div class="text">
-        <h5>This software platform that handles all the issues and meets the sides of volunteering in one platform which is accepting only the students of the University of Glasgow. Organisations will be able to advertise any kind of volunteering opportunity
-            on this platform and students can apply for them immediatly according to their interests and talents. After a short registering process that requires an university student email address, students will be able to support the society by finding
-            the best volunteering match for themselves.
+        <h5 style="text-align: justify;">Via volunteering, students can increase self-confidence, develop new skills, leadership, project management and most importantly team working.
         </h5>
     </div>
+
 </div>
 
 
@@ -74,25 +89,9 @@
 
 
 
-<div class="d-flex justify-content-center px-5 my-4">
-    <div class="card  bg-primary" style="width: 18rem; text-align: center;">
-        <img class="card-img-top" src="https://bmhc.org.uk/wp-content/uploads/2022/01/volunteer1.jpeg" alt="Card image cap" width="500" height="200">
-        <div class="card-body">
-            <h5 class="card-title">Active Volunteers</h5>
-            <p class="card-text">95</p>
-        </div>
-    </div>
-    <div class="card  bg-success" style="width: 18rem; text-align: center;">
-        <img class="card-img-top" src="https://civilservicelocal.blog.gov.uk/wp-content/uploads/sites/94/2020/09/opportunity-1.jpg" alt="Card image cap" width="500" height="200">
-        <div class="card-body">
-            <h5 class="card-title">Active Opportunities</h5>
-            <p class="card-text">15</p>
-        </div>
-    </div>
-</div>
 
-<div class="d-flex justify-content-center px-5 my-4">
-    <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 18rem;">Become a VOLUNTEER !</button>
-    <button type="button" class="btn btn-success btn-lg btn-block" style="width: 18rem;">Find a VOLUNTEER !</button>
-</div>
+
+
+
+
 {% endblock content %}

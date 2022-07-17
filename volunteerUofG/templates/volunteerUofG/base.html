@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #3BB9FF;">
 
     <div class="landing-page text-white">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary lp-navbar">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="d-flex">
 
-                        <div><a class="navbar-brand d-flex flex-start" href="#">VolunteerUofG</a></div>
+                        <div><a class="navbar-brand d-flex flex-start" href="#">VolunteerUofG -- Welcome {{ user.username }} !</a></div>
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -50,7 +50,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="">Logout</a>
+                            <a class="nav-link" href="http://127.0.0.1:8000/aboutUs/">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'volunteerUofG:logout' %}">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +62,16 @@
         </nav>
         {% block content %}{% endblock content %}
     </div>
-
+    <footer class="bg-primary" style="position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+    color: white;
+    text-align: center;">
+        <p class="float-right"><a style="color: white;" href="#">Back to top</a></p>
+        <p>&copy; 2022 VolunteerUofG &middot; Designed by Yahya AYABAKAN</p>
+    </footer>
 
 
 
