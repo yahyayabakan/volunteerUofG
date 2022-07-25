@@ -4,7 +4,7 @@
 
 
 
-<div style="color: black;">
+<!--<div style="color: black;">
     <h1>Create an Opportunity !</h1>
     {% if registered %} VolunteerUofG says: <strong>Thank you for helping our society !</strong>
     <a href="/">Return to the homepage.</a><br />{% else %}
@@ -15,5 +15,23 @@
         <input type="submit" name="submit" value="Create" />
     </form>
     {% endif %}
+</div>-->
+
+<div class="container mt-3" style="text-align: center; padding: 30px;">
+
+    <h1 style="text-align: center;">Create an Opportunity !</h1>
+    <hr> {% if registered %} VolunteerUofG says: <strong>Thank you for helping our society !</strong>
+    <a href="/">Return to the homepage.</a><br />{% else %}
+    <form id="user_form" method="post" action="/createAnOpportunity/" enctype="multipart/form-data">
+
+        {% csrf_token %} {{ opportunity_form.as_p }}
+
+        <input type="submit" name="submit" value="Create" style="padding-bottom: 30px;">
+    </form>
+    {% endif %}
+
+
 </div>
+
+
 {% endblock %}

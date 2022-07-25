@@ -3,17 +3,20 @@
 
 
 
+<div class="container mt-3" style="text-align: center; padding: 30px;">
+    <div>
+        <h1>Register for VolunteerUofG</h1>
+        {% if registered %} VolunteerUofG says: <strong>thank you for registering!</strong>
+        <a href="/">Return to the homepage.</a><br /> {% else %} VolunteerUofG says: <strong>register here!</strong><br />
+        <form id="user_form" method="post" action="/findAVolunteer/" enctype="multipart/form-data">
 
-<div style="color: black;">
-    <h1>Register for VolunteerUofG</h1>
-    {% if registered %} VolunteerUofG says: <strong>thank you for registering!</strong>
-    <a href="/">Return to the homepage.</a><br /> {% else %} VolunteerUofG says: <strong>register here!</strong><br />
-    <form id="user_form" method="post" action="/findAVolunteer/" enctype="multipart/form-data">
+            {% csrf_token %} {{ user_form.as_p }} {{ charity_form.as_p }}
 
-        {% csrf_token %} {{ user_form.as_p }} {{ charity_form.as_p }}
+            <input type="submit" name="submit" value="Register" style="padding-bottom:35px;">
+        </form>
+        {% endif %}
+    </div>
 
-        <input type="submit" name="submit" value="Register" />
-    </form>
-    {% endif %}
 </div>
+
 {% endblock %}

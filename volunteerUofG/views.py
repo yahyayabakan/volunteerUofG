@@ -1,3 +1,5 @@
+from operator import truediv
+import this
 from django.http import HttpResponse
 from django.shortcuts import render
 from volunteerUofG.forms import OpportunityForm, UserForm, CharityForm, VolunteerForm
@@ -146,7 +148,70 @@ def user_logout(request):
     return redirect(reverse('volunteerUofG:index'))
 
 
+@login_required
+def myOpportunities(request):
+    allOpportunities = Opportunity.objects.all()
+    
+    
+    def isMyOpportunity(opportunity):
+        if opportunity.creator.user == request.user:
+            return True
+        else :
+            return False
+    context = {
+        "myOpportunities" : filter(isMyOpportunity, allOpportunities)
+    }
+    return render(request, "volunteerUofG/myOpportunities.html", context) 
 
+
+"""def updateOpportunity(request, pk):
+    registered = False
+
+    if request.method == 'POST':
+
+       
+        
+        opportunity_form = OpportunityForm(request.POST)  
+
+        if opportunity_form.is_valid():          
+
+            opportunity = opportunity_form.save(commit=False)            
+            opportunity.save()   
+            registered = True        
+           
+            
+        else:
+            print(opportunity_form.errors)
+    else:
+       
+        opportunity_form = OpportunityForm()
+    
+    return render(request, 'volunteerUofG/updateOpportunity.html', context={ 'opportunity_form' : opportunity_form, 'registered' : registered})"""
+
+def updateOpportunity(request, pk):
+    opportunity = Opportunity.objects.get(id = pk)
+
+    opportunity_form = OpportunityForm( instance = opportunity) 
+    
+
+    if request.method == 'POST':
+        opportunity_form = OpportunityForm(request.POST, instance = opportunity)
+        if opportunity_form.is_valid():
+            opportunity_form.save()
+            return redirect('/')
+
+    context = { 'opportunity_form' : opportunity_form }
+    return render(request, 'volunteerUofG/updateOpportunity.html', context)
+
+def deleteOpportunity(request, pk):
+    opportunity = Opportunity.objects.get(id = pk)    
+
+    if request.method == 'POST':
+        opportunity.delete()           
+        return redirect('/')
+
+    context = { 'opportunity' : opportunity }
+    return render(request, 'volunteerUofG/deleteOpportunity.html', context)
 
     
 

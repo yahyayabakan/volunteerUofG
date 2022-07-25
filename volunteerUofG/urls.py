@@ -15,4 +15,7 @@ urlpatterns = [
     path('findAVolunteer/', views.findAVolunteer, name='findAVolunteer'),
     path('activeOpportunities/', views.activeOpportunities, name='activeOpportunities'),
     path('createAnOpportunity/', views.createAnOpportunity, name='createAnOpportunity'),
+    path('myOpportunities/', views.myOpportunities, name='myOpportunities'),
+    path('updateOpportunity/<str:pk>/', views.updateOpportunity, name='updateOpportunity'),
+    path('deleteOpportunity/<str:pk>/', views.deleteOpportunity, name='deleteOpportunity'),
 ]
