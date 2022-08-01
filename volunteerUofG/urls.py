@@ -1,6 +1,8 @@
+import imp
 from django.urls import path
-
+from django.conf import settings
 from . import views
+from django.conf.urls.static import static
 
 app_name = 'volunteerUofG'
 
@@ -18,4 +20,7 @@ urlpatterns = [
     path('myOpportunities/', views.myOpportunities, name='myOpportunities'),
     path('updateOpportunity/<str:pk>/', views.updateOpportunity, name='updateOpportunity'),
     path('deleteOpportunity/<str:pk>/', views.deleteOpportunity, name='deleteOpportunity'),
+    path('myAccount/<str:pk>/', views.myAccount, name='myAccount'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

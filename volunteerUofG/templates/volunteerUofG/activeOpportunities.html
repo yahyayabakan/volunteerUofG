@@ -1,13 +1,5 @@
-{% extends "volunteerUofG/base.html" %} {% block content %}
-<!--<div class="d-flex justify-content-center px-5 my-4">
-    <div class="d-flex search-container justify-content-center">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
+{% extends "volunteerUofG/base.html" %} { load static} {% block content %}
 
-        <button class="btn btn-outline-primary search" type="button">
-              Search
-            </button>
-    </div>
-</div>-->
 
 <div class="container mt-3 paddingrightleft" style="color: black;">
     <div class="col">
@@ -20,7 +12,7 @@
         <div class="row">
             {% for opportunity in opportunities %}
             <div class="card col-md-4">
-                <img class="card-img-top" src="{{ opportunity.image }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ opportunity.profile_picture.url }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ opportunity.title }}</h5>
                     <p class="card-text">{{ opportunity.description }}</p>
@@ -43,7 +35,15 @@
 
 </div>
 
+<!--<div class="d-flex justify-content-center px-5 my-4">
+    <div class="d-flex search-container justify-content-center">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
 
+        <button class="btn btn-outline-primary search" type="button">
+              Search
+            </button>
+    </div>
+</div>-->
 <!--<div class="card-group">
         <div class="row">
             <div class="card col-md-4">

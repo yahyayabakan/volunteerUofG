@@ -12,7 +12,7 @@ class Volunteer(models.Model):
     availability = models.CharField(max_length= 350, default='')
     introduce_yourself = models.TextField(max_length=500,default='')
     image = models.ImageField(upload_to='images/',default='https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg')
-
+    profile_picture = models.ImageField(null=True, blank=True)
     def __str__(self):
     	return self.user.username
 
@@ -24,6 +24,7 @@ class Charity(models.Model):
     website = models.URLField(max_length=200,default='')
     description = models.TextField(max_length=500,default='')
     image = models.ImageField(upload_to='images/', default='https://m.media-amazon.com/images/I/4193V9-69jS._AC_SY780_.jpg')
+    profile_picture = models.ImageField(null=True, blank=True)
     
     def __str__(self):
     	return self.user.username
@@ -37,7 +38,7 @@ class Opportunity(models.Model):
     location = models.CharField(max_length= 350,default='')
     time = models.CharField(max_length= 350, default='')
     image = models.ImageField(upload_to='images/',default='https://www.covenantgroup.com/img/84')
-    
+    profile_picture = models.ImageField(null=True, blank=True)
     
     def __str__(self):
         return self.title

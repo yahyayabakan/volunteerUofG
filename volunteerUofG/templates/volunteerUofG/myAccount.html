@@ -1,25 +1,22 @@
 {% extends "volunteerUofG/base.html" %} {% load crispy_forms_tags %}{% block content %}
 
-
-
-
 <div class="container mt-3" style="text-align: center; padding: 30px;">
     <div>
-        <h1>Register for VolunteerUofG</h1>
-        {% if registered %} VolunteerUofG says: <strong>thank you for registering!</strong>
-        <a href="/">Return to the homepage.</a><br /> {% else %} VolunteerUofG says: <strong>register here!</strong><br />
+        <h1>Update your account </h1>
+        {% if registered %} VolunteerUofG says: <strong>Thank you for registering!</strong>
+        <a href="/">Return to the homepage.</a><br /> {% else %} VolunteerUofG says: <strong>Update here!</strong><br />
         <form id="user_form" method="post" action="/findAVolunteer/" enctype="multipart/form-data">
             <div class="col-md-5" style="text-align: center;  position: relative; left: 25%; right: 25%;
             width:50%;">
-                {% csrf_token %} {{ user_form|crispy }} {{ charity_form|crispy }}
+                {% csrf_token %} {{ user_form|crispy }}
             </div>
 
 
-            <input type="submit" class="btn btn-primary" name="submit" value="Register">
+            <input type="submit" class="btn btn-primary" name="submit" value="Update">
         </form>
         {% endif %}
     </div>
 
 </div>
 
-{% endblock %}
+{% endblock content %}

@@ -1,4 +1,4 @@
-{% extends "volunteerUofG/base.html" %} {% block content %}
+{% extends "volunteerUofG/base.html" %} {% load crispy_forms_tags %}{% block content %}
 
 
 
@@ -17,21 +17,32 @@
     {% endif %}
 </div>-->
 
-<div class="container mt-3" style="text-align: center; padding: 30px;">
+
+
+<div class="container mt-3">
 
     <h1 style="text-align: center;">Create an Opportunity !</h1>
     <hr> {% if registered %} VolunteerUofG says: <strong>Thank you for helping our society !</strong>
     <a href="/">Return to the homepage.</a><br />{% else %}
-    <form id="user_form" method="post" action="/createAnOpportunity/" enctype="multipart/form-data">
+    <div>
+        <form id="user_form" method="post" action="/createAnOpportunity/" enctype="multipart/form-data">
+            <div class="col-md-5" style="text-align: center;  position: relative; left: 25%; right: 25%;
+            width:50%;">
+                {% csrf_token %} {{ opportunity_form|crispy }}
+                <input type="submit" class="btn btn-primary" name="submit" value="Create">
+            </div>
+    </div>
 
-        {% csrf_token %} {{ opportunity_form.as_p }}
 
-        <input type="submit" name="submit" value="Create" style="padding-bottom: 30px;">
+
+
+
     </form>
+
     {% endif %}
 
-
 </div>
+
 
 
 {% endblock %}

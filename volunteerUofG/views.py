@@ -1,9 +1,9 @@
-from operator import truediv
-import this
+
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from volunteerUofG.forms import OpportunityForm, UserForm, CharityForm, VolunteerForm
-from volunteerUofG.models import Opportunity, Volunteer, Charity
+from volunteerUofG.models import Opportunity, Volunteer, Charity, User
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.urls import reverse
@@ -214,7 +214,20 @@ def deleteOpportunity(request, pk):
     return render(request, 'volunteerUofG/deleteOpportunity.html', context)
 
     
+@login_required
+def myAccount(request, pk):
+    user = User.objects.get(id = pk)
 
+    user_form = UserForm( instance = user)
+
+    if(request.method == 'POST'):
+        user_form = UserForm( request.POST, instance=user)
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('/')
+    context = {'user_form' : user_form}
+
+    return render(request, 'volunteerUofG/myAccount.html', context)
 
     
 
