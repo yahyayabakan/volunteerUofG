@@ -51,8 +51,8 @@ def becomeAVolunteer(request):
     registered = False
 
     if request.method == 'POST':
-        user_form = UserForm(request.POST)
-        volunteer_form = VolunteerForm(request.POST)  
+        user_form = UserForm(request.POST, request.FILES)
+        volunteer_form = VolunteerForm(request.POST, request.FILES)  
 
         if user_form.is_valid() and volunteer_form.is_valid():
             user = user_form.save(commit=False)
@@ -77,8 +77,8 @@ def findAVolunteer(request):
     registered = False
 
     if request.method == 'POST':
-        user_form = UserForm(request.POST)
-        charity_form = CharityForm(request.POST)  
+        user_form = UserForm(request.POST, request.FILES)
+        charity_form = CharityForm(request.POST, request.FILES)  
 
         if user_form.is_valid() and charity_form.is_valid():
             user = user_form.save(commit=False)
@@ -104,7 +104,7 @@ def createAnOpportunity(request):
 
     if request.method == 'POST':
         
-        opportunity_form = OpportunityForm(request.POST)  
+        opportunity_form = OpportunityForm(request.POST, request.FILES)  
 
         if opportunity_form.is_valid():          
 

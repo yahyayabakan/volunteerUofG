@@ -12,7 +12,7 @@ class Volunteer(models.Model):
     availability = models.CharField(max_length= 350, default='')
     introduce_yourself = models.TextField(max_length=500,default='')
     image = models.ImageField(upload_to= 'profile_images',null=True, blank=True,default='https://cdn3.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg')
-    profile_picture = models.ImageField(null=True, blank=True)
+    #profile_picture = models.ImageField(upload_to='images/',null=True, blank=True)
     def __str__(self):
     	return self.user.username
 
