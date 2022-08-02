@@ -18,12 +18,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
-STATICFILES_DIRS = [STATIC_DIR, ]
+STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')] 
 STATIC_URL = '/static/'
 
 # Media Files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 MEDIA_URL = '/images/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 

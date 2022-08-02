@@ -12,7 +12,7 @@
         <div class="row">
             {% for opportunity in opportunities %}
             <div class="card col-md-4">
-                <img class="card-img-top" src="{{ opportunity.profile_picture.url }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ opportunity.image.url }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ opportunity.title }}</h5>
                     <p class="card-text">{{ opportunity.description }}</p>

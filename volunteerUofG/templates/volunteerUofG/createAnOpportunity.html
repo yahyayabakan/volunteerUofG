@@ -25,7 +25,7 @@
     <hr> {% if registered %} VolunteerUofG says: <strong>Thank you for helping our society !</strong>
     <a href="/">Return to the homepage.</a><br />{% else %}
     <div>
-        <form id="user_form" method="post" action="/createAnOpportunity/" enctype="multipart/form-data">
+        <form id="user_form" method="POST" action="/createAnOpportunity/" enctype="multipart/form-data">
             <div class="col-md-5" style="text-align: center;  position: relative; left: 25%; right: 25%;
             width:50%;">
                 {% csrf_token %} {{ opportunity_form|crispy }}

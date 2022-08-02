@@ -1,4 +1,4 @@
-{% extends "volunteerUofG/base.html" %} {% block content %}
+{% extends "volunteerUofG/base.html" %} { load static}{% block content %}
 
 <div class="container mt-3 paddingrightleft" style="color: black;">
     <div class="col">
@@ -11,7 +11,7 @@
         <div class="row">
             {% for volunteer in volunteers %}
             <div class="card col-md-4">
-                <img class="card-img-top" src="{{ volunteer.image }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ volunteer.image.url }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ volunteer.user.first_name }} {{ volunteer.user.last_name }}</h5>
                     <p class="card-text">{{ volunteer.introduce_yourself }}</p>
