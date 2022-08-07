@@ -1,8 +1,19 @@
 from django.test import TestCase
 from volunteerUofG.models import User, Volunteer, Charity, Opportunity
+from django.test import Client
 # Create your tests here.
 
 class VolunteerModelTest(TestCase):
+
+    def test_user_login(self):
+        c = Client()
+        response = c.post('/login/', {'username': 'ActionFoundation', 'password': 'yaho03183'})
+        self.assertEqual(200, response.status_code)
+
+    def test_user_login_false(self):
+        c = Client()
+        response = c.post('/login/', {'username': 'ActionFoundation', 'password': 'yaho0318'})
+        self.assertEqual(200, response.status_code)
    
     def test_first_name(self):
         user = User(first_name = 'James', last_name = 'Bond', email = "jamesbond@gmail.com")
@@ -118,3 +129,5 @@ class VolunteerModelTest(TestCase):
         opportunity = Opportunity(title = 'Food Bank', creator = charity, url = 'https://wwww.foodbank.com', description = 'We provide free food for homeless', skills = 'Delivery service', location='Glasgow', time='Everyday')
         time = opportunity.time
         self.assertEqual(time, 'Everyday')
+
+    

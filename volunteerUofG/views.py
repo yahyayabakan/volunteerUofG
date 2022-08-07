@@ -9,6 +9,7 @@ from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
+
 def index(request):
     opportunityList = Opportunity.objects.all()
     activeOpportunitiesSize = len(opportunityList)
