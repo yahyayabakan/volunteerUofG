@@ -1,20 +1,15 @@
 {% extends "volunteerUofG/base.html" %} {% block content %}
 
-
-
-
 <div class="container mt-3 paddingrightleft">
     <div class="col">
         <h2>My Opportunities</h2>
         <hr>
     </div>
-
     <div class="card-group">
-
         <div class="row">
             {% for opportunity in myOpportunities %}
             <div class="card col-md-4" style="color: black;">
-                <img class="card-img-top" src="{{ opportunity.image }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ opportunity.image.url }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ opportunity.title }}</h5>
                     <p class="card-text">{{ opportunity.description }}</p>
@@ -22,8 +17,6 @@
                         <a href="{% url 'volunteerUofG:updateOpportunity' opportunity.id %}"><button type="button" class="btn btn-warning">Update</button></a>
                         <a href="{% url 'volunteerUofG:deleteOpportunity' opportunity.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
                     </div>
-
-
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Interested In : {{ opportunity.title }}</li>
@@ -32,15 +25,11 @@
                     <li class="list-group-item">Time : {{ opportunity.time }}</li>
                     <li class="list-group-item">Creator : {{ opportunity.creator }}</li>
                     <li class="list-group-item">URL : {{ opportunity.url }}</li>
-
                 </ul>
-
             </div>
             {% endfor %}
         </div>
-
     </div>
-
 </div>
 
 {% endblock %}

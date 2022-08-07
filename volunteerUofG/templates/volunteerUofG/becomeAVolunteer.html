@@ -10,12 +10,9 @@
             width:50%;">
                 {% csrf_token %} {{ user_form|crispy }} {{ volunteer_form|crispy}}
             </div>
-
-
             <input type="submit" class="btn btn-primary" name="submit" value="Register">
         </form>
         {% endif %}
     </div>
-    {% endblock %}
-
 </div>
+{% endblock %}

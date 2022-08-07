@@ -1,8 +1,5 @@
 {% extends "volunteerUofG/base.html" %} {% load crispy_forms_tags %}{% block content %}
 
-
-
-
 <div class="container mt-3" style="text-align: center; padding: 30px;">
     <div>
         <h1>Register for VolunteerUofG</h1>
@@ -13,13 +10,10 @@
             width:50%;">
                 {% csrf_token %} {{ user_form|crispy }} {{ charity_form|crispy }}
             </div>
-
-
             <input type="submit" class="btn btn-primary" name="submit" value="Register">
         </form>
         {% endif %}
     </div>
-
 </div>
 
 {% endblock %}

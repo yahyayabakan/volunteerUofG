@@ -1,19 +1,12 @@
 {% extends "volunteerUofG/base.html" %} {% block content %}
 
 <div class="container mt-3" style="text-align: center; padding: 30px;">
-
-
     <p>Are you sure you want to delete "{{opportunity}}"?</p>
-
     <form action="{% url 'volunteerUofG:deleteOpportunity' opportunity.id  %}" method="POST">
-
         {% csrf_token %}
         <a class="btn btn-warning" href="/">Cancel</a>
-
         <input class="btn btn-danger" type="submit" name="Confirm">
     </form>
 </div>
-
-
 
 {% endblock %}
