@@ -22,6 +22,7 @@
                     <li class="list-group-item">Time : {{ opportunity.time }}</li>
                     <li class="list-group-item">Creator : {{ opportunity.creator }}</li>
                     <li class="list-group-item">URL : {{ opportunity.url }}</li>
+                    <li class="list-group-item">Email : {{ opportunity.creator.user.email }}</li>
                 </ul>
             </div>
             {% endfor %}
